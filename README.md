@@ -8,7 +8,7 @@ This gem has been developed for use with Ubuntu. Your mileage may vary on other 
 
 ## What is Audio Normalization? ##
 
-Audio normalization is the process of adjusting the volume of a track to bring the loudness to a target level.
+Audio normalization is the process of adjusting the volume of a track to bring the loudness to a target level. This is particularly useful for making sure that all of the files that you upload are audible without the user having to adjust the volume on a track-by-track basis.
 
 ## Installation ##
 
@@ -17,9 +17,12 @@ Add to your Gemfile:
   ```ruby
   gem "paperclip-normalize", :git => "git://github.com/zmillman/paperclip-normalize.git"
   ```
+  
 normalize-audio must also be installed and Paperclip must have access to it.
 
-    > sudo apt-get install normalize-audio
+  ```
+  sudo apt-get install normalize-audio
+  ```
 
 ## Usage ##
 
@@ -37,9 +40,9 @@ This will produce a transcoded `:release` mp3 file with the audio normalized to 
 
 ## Normalizing Video ##
 
-paperclip-normalize can also normalize the audio tracks in video files. To do this, you must have FFMPEG installed and it's highly recommended that you use [paperclip-ffmpeg](https://github.com/owahab/paperclip-ffmpeg) too (since you'll want the transcoding features anyways). See paperclip-ffmpeg's documentation for information on installing FFMPEG.
+`paperclip-normalize` also detects video file formats and works with FFMPEG to normalize the audio track. See [paperclip-ffmpeg's documentation](https://github.com/owahab/paperclip-ffmpeg) for information on installing FFMPEG.
 
-In your model
+In your model:
 
   ```ruby
   class Lesson
@@ -48,5 +51,9 @@ In your model
     }, :processors => [:ffmpeg, :normalize]
   end
   ```
+
+This will produce a transcoded `:web` mp4 with the audio track normalized to 0dB.
+
+## Kudos ##
 
 Thanks to [Chris Vaill](http://normalize.nongnu.org/README.html) for writing normalize-audio. None of this would work without him.
