@@ -79,7 +79,7 @@ module Paperclip
         # Run normalization on the wav file
         parameters = ":audio"
         Paperclip.log("[normalize] #{parameters}")
-        Paperclip.run('normalize-audio', parameters, :audio => File.expand_path(tmp_wav_file.path)
+        Paperclip.run('normalize-audio', parameters, :audio => File.expand_path(tmp_wav_file.path))
         
         # Copy the audio track back into the video file
         parameters = "-i :source -i :audio -map 0:0 -map 1:0 -vcodec copy -acodec copy :dest"
