@@ -4,7 +4,7 @@ require "paperclip-normalize/version"
 
 Gem::Specification.new do |s|
   s.name        = "paperclip-normalize"
-  s.version     = Paperclip::Normalize::VERSION
+  s.version     = '0.0.1'
   s.authors     = ["Zach Millman"]
   s.email       = ["zach.millman@gmail.com"]
   s.homepage    = "http://github.com/zmillman/paperclip-normalize"
