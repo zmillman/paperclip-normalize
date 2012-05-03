@@ -2,13 +2,15 @@
 
 THIS GEM IS NOT IMPLEMENTED. DO NOT USE IT YET!
 
-Add an audio normalization processor to Paperclip using normalize-audio for processing audio and video files.
+Add an audio normalization processor to Paperclip.
 
 This gem has been developed for use with Ubuntu. Your mileage may vary on other systems.
 
-## What is Audio Normalization? ##
+## About Audio Normalization ##
 
-Audio normalization is the process of adjusting the volume of a track to bring the loudness to a target level. This is particularly useful for making sure that all of the files that you upload are audible without the user having to adjust the volume on a track-by-track basis.
+Audio normalization is the process of adjusting the volume of a track to bring the loudness to a target level.
+
+This is particularly useful for making sure that all of the files that you upload are audible without the user having to adjust the volume on a track-by-track basis.
 
 ## Installation ##
 

@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Paperclip::Normalize::VERSION
   s.authors     = ["Zach Millman"]
   s.email       = ["zach.millman@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "http://github.com/zmillman/paperclip-normalize"
+  s.summary     = %q{Normalize the volume of your audio files}
+  s.description = %q{Normalize the volume of your audio files}
 
   s.rubyforge_project = "paperclip-normalize"
 
@@ -21,4 +21,6 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
   # s.add_runtime_dependency "rest-client"
+  
+  s.add_dependency('paperclip')
 end
