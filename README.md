@@ -16,27 +16,27 @@ This is particularly useful for making sure that all of the files that you uploa
 
 Add to your Gemfile:
 
-  ```ruby
-  gem "paperclip-normalize", :git => "git://github.com/zmillman/paperclip-normalize.git"
-  ```
+```ruby
+gem "paperclip-normalize", :git => "git://github.com/zmillman/paperclip-normalize.git"
+```
   
 normalize-audio must also be installed and Paperclip must have access to it.
 
-  ```
-  sudo apt-get install normalize-audio
-  ```
+```
+sudo apt-get install normalize-audio
+```
 
 ## Usage ##
 
 In your model:
 
-  ```ruby
-  class Podcast < ActiveRecord::Base
-    has_attached_file :audio, :styles => {
-        :release => {:format => 'mp3' }
-      }, :processors => [:normalize]
-  end
-  ```
+```ruby
+class Podcast < ActiveRecord::Base
+  has_attached_file :audio, :styles => {
+      :release => {:format => 'mp3' }
+    }, :processors => [:normalize]
+end
+```
 
 This will produce a transcoded `:release` mp3 file with the audio normalized to 0dB.
 
@@ -46,16 +46,16 @@ This will produce a transcoded `:release` mp3 file with the audio normalized to 
 
 In your model:
 
-  ```ruby
-  class Lesson
-    has_attached_file :video, :styles => {
-      :web => { :geometry => "640x480", :format => 'mp4' }
-    }, :processors => [:ffmpeg, :normalize]
-  end
-  ```
+```ruby
+class Lesson
+  has_attached_file :video, :styles => {
+    :web => { :geometry => "640x480", :format => 'mp4' }
+  }, :processors => [:ffmpeg, :normalize]
+end
+```
 
 This will produce a transcoded `:web` mp4 with the audio track normalized to 0dB.
 
 ## Kudos ##
 
-Thanks to [Chris Vaill](http://normalize.nongnu.org/README.html) for writing normalize-audio. None of this would work without him.
+Thanks to Chris Vaill for writing [normalize-audio](http://normalize.nongnu.org/README.html). None of this would work without him.
