@@ -47,7 +47,7 @@ module Paperclip
       
       # Copy source file to destination file
       FileUtils.copy_stream(src, dst)
-      dst.close
+      dst.flush
       
       parameters = ":source"
     

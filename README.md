@@ -42,7 +42,7 @@ This will produce a transcoded `:release` mp3 file with the audio normalized to 
 
 ## Normalizing Video ##
 
-`paperclip-normalize` also detects video file formats and works with FFMPEG to normalize the audio track. See [paperclip-ffmpeg's documentation](https://github.com/owahab/paperclip-ffmpeg) for information on installing FFMPEG.
+`paperclip-normalize` also detects video file formats and works with FFMPEG to normalize the audio track. See [paperclip-ffmpeg's documentation](https://github.com/owahab/paperclip-ffmpeg) for information on installing and using FFMPEG.
 
 In your model:
 
