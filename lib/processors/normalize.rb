@@ -29,7 +29,8 @@ module Paperclip
         
       # unprocessable filetype  
       else
-        Paperclip.log "[normalize] error while processing audio for #{@basename}: not a video or audio file"
+        Paperclip.log "[normalize] skipped processing file #{@file.path}: not a video or audio file"
+        return @file
       end
     end
     
