@@ -20,16 +20,16 @@ module Paperclip
     def make
       case @current_format
       # Handle audio files
-      when 'wav', 'mp3', 'aac'
+      when '.wav', '.mp3', '.aac'
         return process_audio_file
       
       # Handle video files
-      when 'mp4' #Video files
+      when '.mp4', '.flv' #Video files
         return process_video_file
         
       # unprocessable filetype  
       else
-        Paperclip.log "[normalize] skipped processing file #{@file.path}: not a video or audio file"
+        Paperclip.log "[normalize] skipped processing file #{@file.path}: #{@current_format} is not a recognized video or audio file extension"
         return @file
       end
     end
