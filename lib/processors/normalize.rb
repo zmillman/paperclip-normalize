@@ -21,11 +21,11 @@ module Paperclip
       case @current_format
       # Handle audio files
       when '.wav', '.mp3', '.aac'
-        return process_audio_file
+        return self.process_audio_file
       
       # Handle video files
       when '.mp4', '.flv' #Video files
-        return process_video_file
+        return self.process_video_file
         
       # unprocessable filetype  
       else
@@ -41,7 +41,7 @@ module Paperclip
     # Returns a processed file
     def process_audio_file
       src = @file
-      dst = Tempfile.new([@basename, ".wav"])
+      dst = Tempfile.new([@basename, @current_format])
       dst.binmode
       
       # Copy source file to destination file
@@ -65,7 +65,7 @@ module Paperclip
     # Returns a processed file
     def process_video_file
       src = @file
-      dst = Tempfile.new([@basename, ".wav"])
+      dst = Tempfile.new([@basename, @format ? ".#{@format}" : ''])
       dst.binmode
         
       tmp_wav_file = Tempfile.new([@basename, ".wav"])
@@ -73,7 +73,7 @@ module Paperclip
         
       begin
         # Copy the audio track from the video to a temporary wav file
-        parameters = "-i :source -acodec pcm_s16le :audio"
+        parameters = "-i :source -acodec pcm_s16le :audio -y"
         Paperclip.log("[normalize ffmpeg] #{parameters}")
         Paperclip.run('ffmpeg', parameters, :source => File.expand_path(src.path), :audio => File.expand_path(tmp_wav_file.path))
         
